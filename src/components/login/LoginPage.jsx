@@ -39,6 +39,8 @@ const LoginPage = () => {
         localStorage.setItem('id', responseData.userId);
         localStorage.setItem('token', responseData.token);
         alert('Inicio de sesion exitoso!');
+        setEmail("");
+        setPassword("");
         setHasAccess(true);
       } else {
         throw new Error(`Inicio de session fallido. ${response.status}`);
@@ -66,6 +68,9 @@ const LoginPage = () => {
         localStorage.setItem('id', responseData.userId);
         localStorage.setItem('token', responseData.token);
         alert('Registro exitoso!');
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
         setHasAccess(true);
       } else {
         throw new Error(`Registro fallido. ${response.status}`);
