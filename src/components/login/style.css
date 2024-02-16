@@ -117,4 +117,5 @@ h2 {
     padding-top: 6rem;
     height: 100%;
     width: 100%;
+    background-clip: text;
 }
