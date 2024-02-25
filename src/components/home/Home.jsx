@@ -18,22 +18,32 @@ const Home = () => {
         {title:"Servicios de la unidad académica", content:"content", time:"time"}
     ]
     const numCards=cardsData.length;
-      const sliderSettings = {
-        dots: true, 
+    const settingsForDesktop = {
+        dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: Math.min(numCards, 4), 
+        slidesToShow: Math.min(numCards, 4),
         slidesToScroll: 1,
-       
-    };;
+    };
+
+    const settingsForPhone = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1, // Display only one slide for phone
+        slidesToScroll: 1,
+        gap:30,
+    };
 
    return (
     <div className="home-container">
         <div className="container2">
             <h1>Bienvenido, juanperez@gmail.com</h1>
         </div>
+          
+        <h2>Cuestionarios:</h2>
         <div className="slider-container">
-            <Slider  {...sliderSettings}>
+        <Slider {...(window.innerWidth > 600 ? settingsForDesktop : settingsForPhone)}>
                 {cardsData.map((card, index) => (
                     <Cards key={index} title={card.title} content={card.content} time={card.time} />
                 ))}
