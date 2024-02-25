@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
+import IMG from "../../assets/CASE.png"
+import IMG2 from "../../assets/CASE-ed.jpg"
 
 
 
@@ -18,9 +20,9 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (hasAccess) {
+   // if (hasAccess) {
       navigate('/home');
-    }
+    //}
   }, [hasAccess, navigate]);
 
   const loginUser = async () => {
@@ -94,8 +96,8 @@ const LoginPage = () => {
     <div className="userdiv">
       <div className="login-page">
         <div className={`card ${isRegister ? 'flipped' : ''}`}>
-          <div className="img">
-            <img src="https://case.uaz.edu.mx/wp-content/uploads/2021/01/CASE-INFO-768x404.jpg" alt="" />
+          <div className="image">
+            <img src={IMG2} alt="" />
           </div>
           <div className="form">
             {isRegister ? (
