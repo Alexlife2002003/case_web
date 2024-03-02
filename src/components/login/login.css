@@ -17,17 +17,17 @@
     perspective: 1000px;
 }
 
-.card {
+.card-login{
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
 }
 
-.card.flipped,.register-form{
+.card-login.flipped,.register-form{
     transform: rotateY(180deg);
 }
 
-.card.flipped .image {
+.card-login.flipped .image {
     transform: rotateY(180deg);
   }
 

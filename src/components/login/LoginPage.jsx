@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './style.css';
+import './login.css';
 import { useNavigate } from 'react-router-dom';
 import IMG from "../../assets/CASE.png"
 import IMG2 from "../../assets/CASE-ed.jpg"
@@ -20,9 +20,9 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-   // if (hasAccess) {
+   if (hasAccess) {
       navigate('/home');
-    //}
+    }
   }, [hasAccess, navigate]);
 
   const loginUser = async () => {
@@ -95,7 +95,7 @@ const LoginPage = () => {
   return (
     <div className="userdiv">
       <div className="login-page">
-        <div className={`card ${isRegister ? 'flipped' : ''}`}>
+        <div className={`card-login ${isRegister ? 'flipped' : ''}`}>
           <div className="image">
             <img src={IMG2} alt="" />
           </div>

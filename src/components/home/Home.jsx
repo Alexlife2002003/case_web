@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Cards from '../cards/Cards';
-import "./style.css";
+import "./home.css";
 
 const Home = () => {
     const cardsData =[
