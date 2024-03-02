@@ -20,7 +20,7 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-   if (hasAccess) {
+    if (hasAccess) {
       navigate('/home');
     }
   }, [hasAccess, navigate]);
