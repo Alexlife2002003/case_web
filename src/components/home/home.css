@@ -13,10 +13,13 @@
 }
 .home-container h1 {
     margin-top: 0;
-    color: white;
+    color:#EFF3F8;
     font-size: 40px;
 
 }
+
+
+
 .slider-container{
     margin-left: 55px;
     margin-right: 55px;
@@ -25,6 +28,8 @@
 h2{
     margin: 0;
     font-size: 30px;
+    color:#BECDE3;;
+
 }
 
 .cards-container-home{
@@ -35,6 +40,10 @@ h2{
 
 @media only screen and (max-width: 600px) {
     .home-container h1 {
-        font-size: 30px;
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 22px;
     }
   }

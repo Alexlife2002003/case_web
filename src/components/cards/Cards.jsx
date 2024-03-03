@@ -1,22 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./style.css";
+import { IoTimeOutline } from "react-icons/io5";
 
 const Cards = ({ title, content, time, quizId }) => {
     const navigate = useNavigate();
 
     const handleStartQuiz = () => {
-        // Implement your logic to start the quiz or navigate to a quiz page based on quizId
-        // For example, navigating to a route like "/quiz/:quizId"
         navigate(`/quiz/${quizId}`);
     }
 
     return (
-        <div className="card">
-            <h3>{title}</h3>
-            <p>{content}</p>
-            <p>{time}</p>
-            <button onClick={handleStartQuiz}>Start Quiz</button>
+        <div className="card" onClick={handleStartQuiz}>
+            <div className="card-content">
+                <h3 className='card-h3'>{title}</h3>
+                <p className='card-contet'>{content}</p>
+                <div className="time">
+                <IoTimeOutline />  {time}</div>
+            </div>
+           {/*  <button onClick={handleStartQuiz}>Start Quiz</button> */}
         </div>
     );
 }
