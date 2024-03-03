@@ -1,14 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import the useHistory hook
+import { useNavigate } from 'react-router-dom';
 import "./style.css";
 
-const Cards = ({ title, content, time }) => {
+const Cards = ({ title, content, time, quizId }) => {
     const navigate = useNavigate();
 
     const handleStartQuiz = () => {
-        // Implement your logic to start the quiz or navigate to a quiz page
-        // For example, navigating to a "/quiz" route
-        navigate('/quiz');
+        // Implement your logic to start the quiz or navigate to a quiz page based on quizId
+        // For example, navigating to a route like "/quiz/:quizId"
+        navigate(`/quiz/${quizId}`);
     }
 
     return (

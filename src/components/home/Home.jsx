@@ -7,15 +7,15 @@ import "./home.css";
 
 const Home = () => {
     const cardsData =[
-        {title:"Datos generales", content:"content", time:"time"},
-        {title:"Incorporación, medios y recursos", content:"content", time:"time"},
-        {title:"Área profesional", content:"content", time:"time"},
-        {title:"Idioma" ,content:"content" ,time:"time"},
-        {title:"Servicios Case", content:"content", time:"time"},
-        {title:"Motivos de deserción y abandono escolar", content:"content", time:"time" },
-        {title:"Salud mental", content:"content", time:"time"},
-        {title:"Conectividad e infraestructura", content:"content", time:"time"},
-        {title:"Servicios de la unidad académica", content:"content", time:"time"}
+        {title:"Datos generales", content:"content", time:"time", quizid:1},
+        {title:"Incorporación, medios y recursos", content:"content", time:"time", quizid:2},
+        {title:"Área profesional", content:"content", time:"time", quizid:3},
+        {title:"Idioma" ,content:"content" ,time:"time", quizid:4},
+        {title:"Servicios Case", content:"content", time:"time", quizid:5},
+        {title:"Motivos de deserción y abandono escolar", content:"content", time:"time", quizid:6 },
+        {title:"Salud mental", content:"content", time:"time", quizid:7},
+        {title:"Conectividad e infraestructura", content:"content", time:"time", quizid:8},
+        {title:"Servicios de la unidad académica", content:"content", time:"time", quizid:9}
     ]
     const numCards=cardsData.length;
     const settingsForDesktop = {
@@ -45,7 +45,7 @@ const Home = () => {
         <div className="slider-container">
         <Slider {...(window.innerWidth > 600 ? settingsForDesktop : settingsForPhone)}>
                 {cardsData.map((card, index) => (
-                    <Cards key={index} title={card.title} content={card.content} time={card.time} />
+                    <Cards key={index} title={card.title} content={card.content} time={card.time} quizId={card.quizid} />
                 ))}
             </Slider>
         </div>

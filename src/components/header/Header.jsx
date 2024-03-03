@@ -6,6 +6,7 @@ import './style.css';
 const Header = () => {
   const navigate=useNavigate()
   const handleImageClick = () => {
+    console.log("clicked")
     navigate('/home');
   }
 
@@ -16,6 +17,7 @@ const Header = () => {
         src={IMG}
         alt="CASE"
         onClick={handleImageClick}
+        onTouchStart={handleImageClick}
     
       />
     </div>

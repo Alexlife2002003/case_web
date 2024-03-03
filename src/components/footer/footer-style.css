@@ -1,10 +1,4 @@
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Make sure the body takes at least the full viewport height */
-    margin: 0; /* Remove default margin */
-  }
-  
+ 
 
   .footer {
     color: grey;
