@@ -1,0 +1,12 @@
+.Quiz-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.quiz-image{
+    height: 40%;
+    width: 40%;
+}

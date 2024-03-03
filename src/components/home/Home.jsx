@@ -38,7 +38,7 @@ const Home = () => {
    return (
     <div className="home-container">
         <div className="container2">
-            <h1>Bienvenido, juanperez@gmail.com</h1>
+            <h1 className='h1-bienvenido'>Bienvenido, juanperez@gmail.com</h1>
         </div>
           
         <h2>Cuestionarios:</h2>

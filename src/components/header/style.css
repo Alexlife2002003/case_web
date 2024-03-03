@@ -1,3 +1,14 @@
 .header-container{
     background-color: #111B3E;
 }
+
+.header-image{
+    cursor: pointer;
+}
+@media only screen and (max-width:600px){
+    .header-image{
+        height: 50%;
+        width: 50%;
+       
+    }
+}

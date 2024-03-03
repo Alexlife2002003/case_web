@@ -1,8 +1,28 @@
-.footer{
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the body takes at least the full viewport height */
+    margin: 0; /* Remove default margin */
+  }
+  
+
+  .footer {
     color: grey;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-   background-color: rgb(194, 192, 192);
-}
+    background-color: rgb(194, 192, 192);
+    padding: 10px;
+  
+
+    bottom: 0;
+    width: 100%;
+  
+    /* Media query for smaller screens */
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  

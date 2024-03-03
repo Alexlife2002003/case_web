@@ -2,7 +2,8 @@
     background-color:  #111B3E;
     padding: 20px;
     box-sizing: border-box;
-   
+    min-height: 100vh;
+  
 
 }
 .container2{
@@ -31,3 +32,9 @@ h2{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .home-container h1 {
+        font-size: 30px;
+    }
+  }
