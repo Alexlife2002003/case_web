@@ -41,7 +41,7 @@ const Home = () => {
             <h1 className='h1-bienvenido'>Bienvenido, juanperez@gmail.com</h1>
         </div>
           
-        <h2>Cuestionarios:</h2>
+        <h2 className='home-h2'>Cuestionarios:</h2>
         <div className="slider-container">
         <Slider {...(window.innerWidth > 600 ? settingsForDesktop : settingsForPhone)}>
                 {cardsData.map((card, index) => (
