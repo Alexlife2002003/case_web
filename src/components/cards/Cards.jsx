@@ -14,7 +14,7 @@ const Cards = ({ title, content, time, quizId }) => {
         <div className="card" onClick={handleStartQuiz}>
             <div className="card-content">
                 <h3 className='card-h3'>{title}</h3>
-                <p className='card-contet'>{content}</p>
+                <p className='card-content'>{content}</p>
                 <div className="time">
                 <IoTimeOutline />  {time}</div>
             </div>
@@ -24,3 +24,5 @@ const Cards = ({ title, content, time, quizId }) => {
 }
 
 export default Cards;
+
+
