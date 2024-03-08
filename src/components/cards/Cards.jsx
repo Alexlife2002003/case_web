@@ -18,6 +18,7 @@ const Cards = ({ title, content, time, quizId }) => {
                 <div className="time">
                 <IoTimeOutline />  {time}</div>
             </div>
+            
            {/*  <button onClick={handleStartQuiz}>Start Quiz</button> */}
         </div>
     );
