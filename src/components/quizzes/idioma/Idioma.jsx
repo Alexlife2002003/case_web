@@ -2,13 +2,20 @@
 import React, { useState } from 'react';
 import RadioButton from '../../components/RadioButton';
 import "./style.css"
+import { useNavigate } from 'react-router-dom';
 
 const Idioma = () => {
   const questions = [
-    { id: 'question1', title: 'Tienes algun conocimiento del Idioma Ingles?', options: ['Si', 'No'] },
-    { id: 'question2', title: 'Estas cursando estudios del idioma ingles actualmente', options: ['Si', 'No'] },
-    { id: 'question3', title: 'Conoces las opciones para estudiar ingles que ofrece la BUAZ a traves del Programa de Extension Universitaria de Lenguhas(PEUL) o del Programa Unico de ingles(PUDI)(PACDI)?', options: ['Si', 'No'] },
+    { id: 'pregunta42', title: 'Tienes algun conocimiento del Idioma Ingles?', options: ['Si', 'No'] },
+    { id: 'pregunta43', title: 'Estas cursando estudios del idioma ingles actualmente', options: ['Si', 'No'] },
+    { id: 'pregunta44', title: 'Conoces las opciones para estudiar ingles que ofrece la BUAZ a traves del Programa de Extension Universitaria de Lenguhas(PEUL) o del Programa Unico de ingles(PUDI)(PACDI)?', options: ['Si', 'No'] },
   ];
+
+  const apiBD = process.env.REACT_APP_API_BD;
+  const apiBDIdioma = process.env.REACT_APP_ADD_IDIOMA;
+  const userId = localStorage.getItem('id');
+  const authToken= localStorage.getItem('token');
+  const navigate = useNavigate();
 
   const [answers, setAnswers] = useState(Object.fromEntries(questions.map(q => [q.id, null])));
 
@@ -16,20 +23,26 @@ const Idioma = () => {
     setAnswers(prevAnswers => ({ ...prevAnswers, [questionId]: value }));
   };
 
-  const handleSubmit = () => {
-    // Send answers to the database
-    // Adjust the API endpoint and database logic accordingly
-
-    fetch('/api/saveQuizAnswers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ answers }),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
+  const handleSubmit = async () => {
+    try{
+      const response = await fetch(apiBD + apiBDIdioma, {
+        method: 'POST',
+        headers: {
+          'Authorization':`Bearer ${authToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({'userId':userId,'pregunta42':answers['pregunta42'],'pregunta43':answers['pregunta43'],'pregunta44':answers['pregunta44']}),
+      });
+        if(response.ok){
+          alert('Respuestas guardadas exitosamente')
+          navigate('/home');
+        }else{
+          throw new Error(`Error al guardar las respuestas. ${response.status}`)
+        }
+    }catch(error){
+      console.error("Error al guardar las respuestas",error)
+      alert("Error al guardar las respuestas, vuelve a intentarlo")
+    }
   };
 
   return (
@@ -46,7 +59,7 @@ const Idioma = () => {
               id={`${id}_option${index + 1}`}
               value={`option${index + 1}`}
               label={option}
-              onChange={() => handleRadioButtonChange(id, `option${index + 1}`)}
+              onChange={() => handleRadioButtonChange(id, option)}
             />
           ))}
         </div>

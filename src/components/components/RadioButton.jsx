@@ -1,13 +1,14 @@
 
 import React from 'react';
 import "./style.css"
-const RadioButton = ({ id, value, label, onChange }) => {
+const RadioButton = ({ id, name, value, label, onChange }) => {
   return (
     <div>
       <input
         type="radio"
         id={id}
-        value={value}
+        name={name}
+        value={label}
         onChange={onChange}
       />
       <label className="RB-label" htmlFor={id}>{label}</label>

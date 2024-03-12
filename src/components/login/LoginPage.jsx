@@ -3,6 +3,7 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 import IMG from "../../assets/CASE.png"
 import IMG2 from "../../assets/CASE-ed.jpg"
+import localforage from 'localforage';
 
 
 
